@@ -33,10 +33,11 @@ def GetDataInfo(manga_name):
 
 def GetImageData(manga_name, manga_capter=1):
     MainPage = f'https://www.supermangas.site/manga/{CleanCaracters(manga_name)}/{manga_capter}'
+    print(MainPage)
     page = get(MainPage).text
     soup = bs(page, 'html.parser')
     ImageTag = soup.find_all('div',class_="capituloViewBox")
-    arc_path = f'{getcwd()}/MangaBotV2/mangas/{manga_name}Cap{manga_capter}_{randrange(1, 10)}.html'
+    arc_path = f'{getcwd()}/Documents/python/MangaBotV2/mangas/{manga_name}Cap{manga_capter}_{randrange(1, 10)}.html'
     arc = open(arc_path, 'w')
     for tag in ImageTag:
         link = tag.find('img').get('data-src')
