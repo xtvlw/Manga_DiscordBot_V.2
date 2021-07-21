@@ -1,7 +1,7 @@
 from sqlite3 import connect
 from os import getcwd
 
-client = connect(f'{getcwd()}/Documents/python/MangaBotV2/mangas/database.db')
+client = connect(f'{getcwd()}/Documents/python/MangaBotV2/database.db')
 cursor = client.cursor()
 
 def maneger(table, id, manga_name='', Value=False):

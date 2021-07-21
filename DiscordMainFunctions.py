@@ -1,11 +1,13 @@
 from GetData import *
+from DataBaseManager import *
 from discord import Client, Colour, File, Embed, Game
 from requests import get
-from DataBaseManager import *
+from os import remove
+
 
 client = Client()
 
-token = ''#<-- Put Your Bot Token Here
+token = ''
 
 
 @client.event
@@ -84,6 +86,7 @@ async def on_reaction_add(reaction, user):
             else:
                 arc = GetImageData(message)
             await reaction.message.channel.send(f'aqui está <@{user.id}>', file=File(arc))
+            remove(arc)
 
 
 client.run(token)
