@@ -5,7 +5,7 @@ from DataBaseManager import *
 
 client = Client()
 
-token = 'NzEwNDg0NTQzOTM2NjU5NTU4.Xr1ISw.AmWYqP7uTHmDwshFZwtcjhyvSaw'
+token = ''#<-- Put Your Bot Token Here
 
 
 @client.event
