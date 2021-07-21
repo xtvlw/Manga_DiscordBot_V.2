@@ -33,7 +33,6 @@ def GetDataInfo(manga_name):
 
 def GetImageData(manga_name, manga_capter=1):
     MainPage = f'https://www.supermangas.site/manga/{CleanCaracters(manga_name)}/{manga_capter}'
-    print(MainPage)
     page = get(MainPage).text
     soup = bs(page, 'html.parser')
     ImageTag = soup.find_all('div',class_="capituloViewBox")
